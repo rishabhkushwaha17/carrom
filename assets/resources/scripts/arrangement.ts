@@ -3,17 +3,10 @@ import { PUNKS } from './constants';
 import { pucks } from './pucks';
 import { jsons, json_1 } from './json';
 const { ccclass, property } = _decorator;
-interface a {
-    index_i: number,
-    indexe_j: number,
-    color: string
-}
 @ccclass('arrangement')
 export class arrangement extends Component {
     @property({ type: Prefab })
     prefab: Prefab = null;
-    obj: a[] = [{ index_i: 1, indexe_j: 2, color: "" }]
-    ab: a;
     json = jsons();
     json_1 = json_1();
     start() {
@@ -39,7 +32,6 @@ export class arrangement extends Component {
                     offset = a.getComponent(UITransform).height;
                     a.setPosition((offset * i * 0.5 + offset * j) - offset * 0.5 * (n - 1), y, 0)
                     this.node.addChild(a);
-                    this.obj.push(this.ab)
                 }
             }
             if (i == (n - Math.floor(n / 2) - 1) && count == 0) {
@@ -49,7 +41,6 @@ export class arrangement extends Component {
             }
             (count == 1) ? y = y - offset : y = y + offset;
         }
-        console.log(this.obj);
     }
 
     update(deltaTime: number) {

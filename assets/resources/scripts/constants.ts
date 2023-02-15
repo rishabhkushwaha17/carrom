@@ -3,4 +3,3 @@ export enum PUNKS {
     RED,
     WHITE
 }
-
